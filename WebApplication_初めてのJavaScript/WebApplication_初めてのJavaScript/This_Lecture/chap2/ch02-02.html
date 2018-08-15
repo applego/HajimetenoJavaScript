@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>例2-2 parseIntとparseFloat</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        function convertToNumber() {
+            var sNum = "1.23e-2";
+            document.writeln("<p>parseFlostの結果：" + parseFloat(sNum) + "<br/>");
+            document.writeln("parseIntの結果：" + parseInt(sNum) + "</p>");
+            var fValue = parseFloat("1.45 cm");
+            document.writeln("<p>parseFloatの結果：" + fValue + "</p>");
+
+            var iValue = parseInt("-33.50");
+            document.writeln("<p>parseIntの結果：" + iValue + "</p>");
+            var iValue = parseInt("100",8);
+            document.writeln("<p>parseIntの結果：" + iValue + "</p>");
+            var iValue = parseInt("B6",16);
+            document.writeln("<p>parseIntの結果：" + iValue + "</p>");
+            document.write("<p>IsFinite()の結果：" + isFinite(100) + "</p>");
+            //alert('絞込み設定：'True'直近か：'False'指定か：'True2017/ 11 / 24 16:46:05'から'2017/ 11 / 24 16:46:05'まで');
+        }
+        //]]>
+    </script>
+</head>
+<body onload="convertToNumber();">
+    <p></p>
+    <!--<button id="btn1" onclick="test_boolean();"></button>
+    <input type="button" onclick="test_boolean();" />-->
+</body>
+</html>

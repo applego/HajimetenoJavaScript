@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>例5-1</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        function alterArgs(strLiteral, aryObject) {
+            //渡された文字列の値を変更
+            strLiteral = "変更した";
+            aryObject[aryObject.length] = "three";
+        }
+        function testParams() {
+            var str = "オリジナルの文字列";
+            var ary = new Array("one", "two");
+            document.writeln("<h3>呼び出し前の値<h3/>");
+            document.writeln("strの値："+str+"</br>");
+            document.writeln("配列の各要素："+ary+"</br>");
+            alterArgs(str, ary);
+            document.writeln("<h3>呼び出し後の値<h3/>");
+            document.writeln("strの値：" + str + "</br>");
+            document.writeln("配列の各要素：" + ary + "</br>");
+            
+        }
+        //]]>
+    </script>
+</head>
+<body onload="testParams();">
+    <p></p>
+</body>
+</html>

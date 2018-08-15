@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>例4-2 Numberオブジェクトのインスタンスメソッド</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        function numbers() {
+            //Numberのメソッド
+            var newNumber = new Number(34.8896);
+
+            document.writeln(newNumber.toExponential(3) + "<br/>");
+            document.writeln(newNumber.toPrecision(3) + "<br/>");
+            document.writeln(newNumber.toFixed(6) + "<br/>");
+
+            var newValue = newNumber.valueOf();
+
+            document.writeln(newValue.toString(2) + "<br/>");
+            document.writeln(newValue.toString(8) + "<br/>");
+            document.writeln(newValue.toString(10) + "<br/>");
+            document.writeln(newValue.toString(16) + "<br/>");
+
+        }
+        //]]>
+    </script>
+</head>
+<body onload="numbers();">
+    <p></p>
+</body>
+</html>

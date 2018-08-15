@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>例3-3 switch文で指揮を複数の値と比較する</title>
+    <script type="text/javascript">
+        //<![CDATA[
+
+        var prefCode = '愛媛';
+        var taxPercentage = 0.0;
+
+        switch (prefCode) {
+            case '愛媛':
+                taxPercentage = 5.5;
+                break;
+            case '長野':
+                taxpercentage = 9.5;
+                break;
+            case '福井':
+            case '栃木':
+            case '青森':
+                taxPercentage = 6.5;
+                break;
+            case '熊本':
+                taxPercentage = 7.0;
+                break;
+            default:
+                taxPercentage = 8, 0;
+        }
+        alert("税率は" + taxPercentage + "%です。");
+        //]]>
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>3-2</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        function doFor() {
+            var strNumber = "one";
+            var result = "";
+            switch (strNumber) {
+                case 'one':
+                case 'two':
+                    result = 'OK';
+                    break;
+                case 'three':
+                    result = 'OK';
+                    break;
+                default:
+                    result = 'NONE';
+            }
+            alert(result);
+
+            var varOne=33;
+            var varTwo=-5;
+            var varThree=5;
+            if (varOne <= 33 & varTwo <= 100 & varThree > 0) {
+                alert('maru');
+            }
+            for (var i = 20; i > 11; --i) {
+                alert(i-1);
+            }
+        }
+        //]]>
+    </script>
+</head>
+<body onload="doFor();">
+    <p></p>
+</body>
+</html>

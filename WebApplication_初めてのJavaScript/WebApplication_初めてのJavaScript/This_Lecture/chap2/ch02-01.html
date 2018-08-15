@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>例2-1 エンコードとデコード</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        function encodeAndDecodeStrings() {
+            var origin1 = "http://someapplication.com/?catsname=Ze&URL=";
+            var origin2 = "http://www.google.co.jp/search?q=初めてのJavaScript";
+            var encoded1 = encodeURI(origin1);
+            var encoded2 = encodeURIComponent(origin2);
+
+            var outputOrigin = "<p>オリジナル：<br/>" + origin1 + "<br/>"
+                + origin2 + "</p>";
+            var outputEncoded = "<p>コード化して合わせた文字列：<br/>"
+                + encoded1 + encoded2 + "</p>";
+            document.write(outputOrigin + outputEncoded);
+
+            var decoded1 = decodeURI(encoded1);
+            var decoded2 = decodeURIComponent(encoded2);
+
+            var outputDecoded = "<p>デコードした結果：<br/>" + decoded1
+                + "<br/>" + decoded2 + "</p>";
+            document.write(outputDecoded);
+        }
+        function test_boolean() {
+            var s = " ";
+            alert(s);
+            alert(Boolean(s));
+        }
+        //]]>
+    </script>
+</head>
+<body onload="encodeAndDecodeStrings();">
+    <p></p>
+    <!--<button id="btn1" onclick="test_boolean();"></button>
+    <input type="button" onclick="test_boolean();" />-->
+</body>
+</html>

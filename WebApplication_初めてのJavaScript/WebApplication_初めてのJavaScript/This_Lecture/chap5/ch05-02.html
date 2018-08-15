@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>例5-2,3,4,5</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        function buildFunction() {
+            var func = prompt("関数の定義を入力してください：");
+            var x = prompt("引数xの値は：");
+            var y = prompt("引数yの値は：");
+            //無名関数を起動
+            var op = new Function("x", "y", func);
+            var theAnswer = op(x, y);
+            //結果を出力
+            document.writeln("関数の定義：" + func+"</br>");
+            document.writeln("引数xの値：" + x + "</br>引数yの値："
+                + y + "</br>");
+            document.writeln("結果：" + theAnswer + "</br>");
+        }
+        //三番目の引数を関数として起動する
+        function funcObject(x, y, z) {
+            alert(z(x, y));
+        }
+        function testFunction2() {
+            //三番目の引数は関数
+            funcObject(3, 4, function (x, y) { return x * y; })
+        }
+        function runRecursion() {
+            var addNumers = function sumNumbers(numArray, indexVal, resultSum, resultString) {
+                //終了条件のテスト
+                if (indexVal == numArray.length) {//配列の終わりに到達
+                    //結果を出力する
+                    document.writeln("合計は" + resultSum + "です。</br>");
+                    document.writeln("全ての要素を列挙します：" + resultString + "</br>");
+                    return;
+                }
+                //終わりにならない場合
+                //加算を行う
+                resultSum += numArray[indexVal];
+                //文字列の連結を行う
+                if (resultString != "") {
+                    resultString += ", " + numArray[indexVal];
+                } else {
+                    resultString = numArray[indexVal];
+                }
+                //添え字を増やす
+                indexVal++;
+                //1増えた添え字で自分自身を呼び出す
+                return sumNumbers(numArray, indexVal, resultSum, resultString);
+            }//ここまでが関数の定義
+
+            var numArray = [1, 35.4, -14, 44, 0.5];  //数値を記憶した配列を生成
+            addNumers(numArray, 0, 0, "");  //関数の呼び出し
+        }
+
+        //外側の関数
+        function generateGreeting(aisatsu) {
+            var kutouten = " ! ";
+            //内側の関数
+            function returnGreeting(aite) {
+                return aisatsu + " 、 " + aite + kutouten;
+            }
+            return returnGreeting;
+        }
+        function processNested() {
+            //returnGreetingにアクセスできるよう generateGreeting を呼び出して、
+            //戻り値として関数returnGreeting を受け取る
+            var morning = generateGreeting("おはようございます");
+            //朝の挨拶を作る関数を作る
+            var s = morning("山本さん");
+            document.writeln(s + "<br/>");  //"おはようございます、山本さん！"
+            s = morning("上田君");  //上田君に朝の挨拶をする
+            document.writeln(s + "<br/>");
+            //昼の挨拶をする関数を作る
+            var daytime = generateGreeting("Good Afternoon");
+            s = daytime("亜依ちゃん");  //亜依ちゃんに昼の挨拶をする
+            document.writeln(s + "<br/>");
+            //夜の挨拶をする関数を作る
+            var night = generateGreeting("Good Night");
+            s = night("日和さん");
+            document.writeln(s + "<br/>");
+            s = night("亜依ちゃん");
+            document.writeln(s + "<br/>");
+        }
+        //]]>
+    </script>
+</head>
+<body onload="buildFunction(); testFunction2(); runRecursion(); processNested();">
+    <p></p>
+</body>
+</html>

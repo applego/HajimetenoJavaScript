@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>例4-7 4章練習問題</title>
+    <script type="text/javascript">
+        //<![CDATA[
+        function array() {
+            var arr4_1 = new Array("羊", "猿", "鳥", "犬", "猪");
+            document.writeln(arr4_1[2] + "<br/>");
+            document.writeln(arr4_1.reverse() + "<br/>");
+        //arr4_1.push("羊");
+        }
+
+        function reg() {
+            var str = "The fun of functions is that they are functional."
+            var regExp = /\bfun\b/g;
+            var resultstr = str.replace(regExp,"power");
+            document.writeln(resultstr);
+        }
+
+        function date() {
+            var dtNow = new Date();
+            var date = dtNow.getDate();
+            document.writeln("<p>今日は" + date+"日です。<br/>");
+            date += 7;
+            document.writeln("<p>一週間後は" + date + "日です。<br/>");
+            var today = Date.today;
+        }
+        function reg2() {
+            var str = "apple.orange-strawberry,lemon-.lime";
+            var regExp2 = /[.,]/g;
+            var result = str.replace(regExp2, ',');
+            var arrayValues = result.split(',');
+            for (var i = 0; i < arrayValues.length; i++) {
+                document.writeln(arrayValues[i] + "<br/>");
+            }
+        }
+        function star() {
+            var n = Math.random()*100;
+            str = "";
+            for (var i = 0; i < n; i++) {
+                str += "★";
+                document.writeln(str+"<br/>")
+            }
+            n = Math.random()*100;
+            str = "";
+            for (var i = 0; i < n; i++) {
+                str += "★";
+                document.writeln(str + "<br/>")
+            }
+            n = Math.random()*100;
+            str = "";
+            for (var i = 0; i < n; i++) {
+                str += "★";
+                document.writeln(str + "<br/>")
+            }
+            n = Math.random()*1000;
+            str = "";
+            for (var i = 0; i < n; i++) {
+                str += "★";
+                document.writeln(str + "<br/>")
+            }
+        }
+
+        function numbers() {
+            array();
+            reg();
+            date();
+            reg2();
+            star();
+            //Numberのメソッド
+            var newNumber = new Number(34.8896);
+
+            document.writeln(newNumber.toExponential(3) + "<br/>");
+            document.writeln(newNumber.toPrecision(3) + "<br/>");
+            document.writeln(newNumber.toFixed(6) + "<br/>");
+
+            var newValue = newNumber.valueOf();
+
+            document.writeln(newValue.toString(2) + "<br/>");
+            document.writeln(newValue.toString(8) + "<br/>");
+            document.writeln(newValue.toString(10) + "<br/>");
+            document.writeln(newValue.toString(16) + "<br/>");
+
+        }
+        //]]>
+    </script>
+</head>
+<body onload="numbers();">
+    <p></p>
+</body>
+</html>
