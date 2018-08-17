@@ -134,6 +134,7 @@
     <Content Include="This_Lecture\chap5\ch05-02.html" />
     <Content Include="This_Lecture\chap5\ch05-01.html" />
     <Content Include="This_Lecture\chap4\ch04-7練習問題.html" />
+    <Content Include="This_Other\__doPostBackを使ってはいけません.aspx" />
     <Content Include="This_Other\ページ間におけるデータ受け渡し.aspx" />
     <Content Include="This_Other\ページ間におけるデータ受け渡し_Page2.aspx" />
     <Content Include="About.aspx" />
@@ -208,6 +209,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="This_Other\__doPostBackを使ってはいけません.aspx.cs">
+      <DependentUpon>__doPostBackを使ってはいけません.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="This_Other\__doPostBackを使ってはいけません.aspx.designer.cs">
+      <DependentUpon>__doPostBackを使ってはいけません.aspx</DependentUpon>
+    </Compile>
     <Compile Include="This_Other\ページ間におけるデータ受け渡し.aspx.cs">
       <DependentUpon>ページ間におけるデータ受け渡し.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
